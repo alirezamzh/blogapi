@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # 3rd-party apps
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
 
     # local
     'posts.apps.PostsConfig',
@@ -50,7 +52,7 @@ REST_FRAMEWORK = {
     ],
     'DEAFULT_AUTHENTICATION_CLASSES':[
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 
