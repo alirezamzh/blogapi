@@ -6,13 +6,13 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import PostSerializer, UserSerializer
 
 
-class PostDetail(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
-class UserDetail(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
 
